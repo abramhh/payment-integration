@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 public class PaymentForm {
 	
+	
 	private String customerName;
 	
 	private String tokenId;

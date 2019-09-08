@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.payment.integration.model.PaymentForm;
+import com.payment.integration.model.ClientInformation;
 import com.payment.integration.service.PaymentIntegrationService;
 
 @Controller
@@ -26,6 +27,14 @@ public class PaymentIntegrationController {
 		return "payment-card";
 	}
 	
+	@RequestMapping(value = "/clientInformation", method = RequestMethod.GET)
+	public String paymentInfoPage(Model model) {
+		
+		ClientInformation information = new ClientInformation();
+		model.addAttribute("paymenInformation", information);
+		
+		return "client-information";
+	}
 	
 	@RequestMapping(value = "/makePayment", method = RequestMethod.POST)
 	public String makePage(@ModelAttribute("paymentForm") PaymentForm paymentForm) {
